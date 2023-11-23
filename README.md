@@ -9,6 +9,9 @@ npm install secure-encrypt
 ```
 
 ## Usage
+
+**CommonJS (Node.js) Syntax**
+
 ```javascript
 const secureEncrypt = require('secure-encrypt');
 
@@ -26,6 +29,26 @@ console.log('Encrypted:', encryptedText);
 const decryptedText = secureEncrypt.decrypt(encryptedText, secretKey);
 console.log('Decrypted:', decryptedText);
 
+```
+
+**ES6 (ECMAScript 2015 and later) Syntax**
+
+```javascript
+import secureEncrypt from 'secure-encrypt';
+
+// Your secret key (keep this secret!)
+const secretKey = 'mySecretKey';
+
+// Text to encrypt
+const plaintext = 'Hello, secure-encrypt!';
+
+// Encrypt the text
+const encryptedText = secureEncrypt.encrypt(plaintext, secretKey);
+console.log('Encrypted:', encryptedText);
+
+// Decrypt the text
+const decryptedText = secureEncrypt.decrypt(encryptedText, secretKey);
+console.log('Decrypted:', decryptedText);
 ```
 
 ## Documentation
