@@ -4,5 +4,10 @@
   "description": "A package that simplifies data encryption and decryption, supporting various algorithms and providing a straightforward API for developers.",
   "main": "index.js",
   "author": "Fahim Ahammed Firoz",
+  "keywords": [
+    "encryption",
+    "security",
+    "npm"
+  ],
   "license": "MIT"
 }
