@@ -26,8 +26,12 @@ const encryptedText = secureEncrypt.encrypt(plaintext, secretKey);
 console.log('Encrypted:', encryptedText);
 
 // Decrypt the text
-const decryptedText = secureEncrypt.decrypt(encryptedText, secretKey);
-console.log('Decrypted:', decryptedText);
+try {
+  const decryptedText = secureEncrypt.decrypt(encryptedText, secretKey);
+  console.log('Decrypted:', decryptedText);
+} catch (error) {
+  console.error('Decryption failed:', error.message);
+}
 
 ```
 
@@ -47,8 +51,12 @@ const encryptedText = secureEncrypt.encrypt(plaintext, secretKey);
 console.log('Encrypted:', encryptedText);
 
 // Decrypt the text
-const decryptedText = secureEncrypt.decrypt(encryptedText, secretKey);
-console.log('Decrypted:', decryptedText);
+try {
+  const decryptedText = secureEncrypt.decrypt(encryptedText, secretKey);
+  console.log('Decrypted:', decryptedText);
+} catch (error) {
+  console.error('Decryption failed:', error.message);
+}
 ```
 
 ## Documentation
@@ -65,6 +73,22 @@ Decrypts the provided encrypted text using the specified secret key.
 - `encryptedText` (string): The text to decrypt (base64-encoded).
 - `secretKey` (string): The secret key for decryption.
 - Returns: The decrypted text.
+
+## Running the Code
+1. Save the code in a file, e.g., `app.js` for CommonJS syntax or `app.mjs` for ES6 syntax.
+2. Open a terminal and navigate to the directory containing the file.
+3. Run the code using the following command:
+    - For CommonJS syntax:
+        ```bash
+        node app.js
+        ```
+
+    - For ES6 syntax (requires Node.js with ES6 module support):
+        ```bash
+        node --experimental-modules app.mjs
+        ```
+
+For CommonJS syntax:
 
 ## Security Considerations
 - **Secret Key:** Keep your secret key confidential. Avoid hardcoding it in your code and consider using environment variables for increased security.
