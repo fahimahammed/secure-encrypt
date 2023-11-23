@@ -7,7 +7,15 @@
   "keywords": [
     "encryption",
     "security",
-    "npm"
+    "npm",
+    "secure-encryption"
   ],
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fahimahammed/secure-encrypt.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "crypto": "^1.0.1"
+  }
 }
