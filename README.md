@@ -1,6 +1,6 @@
 # secure-encrypt
 
-A simple data encryption package for Node.js using the `crypto` module.
+A simple npm package providing encryption and decryption functions using character and shifted encryption techniques.
 
 ## Installation
 
