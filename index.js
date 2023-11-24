@@ -1,6 +1,5 @@
-// index.js
-
-const crypto = require('crypto');
+const { charEncrypt, charDecrypt } = require("./lib/char-encrypt");
+const { shiftedEncrypt, shiftedDecrypt } = require("./lib/shifted-encrypt");
 
 /**
  * Encrypt a plaintext using a secret key.
@@ -9,11 +8,11 @@ const crypto = require('crypto');
  * @returns {string} - The encrypted text (base64-encoded).
  */
 function encrypt(plaintext, secretKey) {
-    const cipher = crypto.createCipher('aes-256-cbc', secretKey);
-    let encrypted = cipher.update(plaintext, 'utf-8', 'base64');
-    encrypted += cipher.final('base64');
-    return encrypted;
+    let encryptedMessage = charEncrypt(plaintext, secretKey);
+    encryptedMessage = shiftedEncrypt(encryptedMessage, secretKey.length % 26);
+    return encryptedMessage;
 }
+
 
 /**
  * Decrypt an encrypted text using a secret key.
@@ -22,10 +21,9 @@ function encrypt(plaintext, secretKey) {
  * @returns {string} - The decrypted text.
  */
 function decrypt(encryptedText, secretKey) {
-    const decipher = crypto.createDecipher('aes-256-cbc', secretKey);
-    let decrypted = decipher.update(encryptedText, 'base64', 'utf-8');
-    decrypted += decipher.final('utf-8');
-    return decrypted;
+    let decryptedMessage = shiftedDecrypt(encryptedText, secretKey.length % 26);
+    decryptedMessage = charDecrypt(decryptedMessage, secretKey)
+    return decryptedMessage;
 }
 
 // Export the encryption and decryption functions
