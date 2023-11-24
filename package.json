@@ -14,9 +14,5 @@
     "type": "git",
     "url": "https://github.com/fahimahammed/secure-encrypt.git"
   },
-  "license": "MIT",
-  "dependencies": {
-    "crypto": "^1.0.1",
-    "crypto-js": "^4.2.0"
-  }
+  "license": "MIT"
 }
