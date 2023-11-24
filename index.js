@@ -1,4 +1,5 @@
 const { charEncrypt, charDecrypt } = require("./lib/char-encrypt");
+const { hexEncrypt, hexDecrypt } = require("./lib/hex-encrypt");
 const { shiftedEncrypt, shiftedDecrypt } = require("./lib/shifted-encrypt");
 
 /**
@@ -10,6 +11,7 @@ const { shiftedEncrypt, shiftedDecrypt } = require("./lib/shifted-encrypt");
 function encrypt(plaintext, secretKey) {
     let encryptedMessage = charEncrypt(plaintext, secretKey);
     encryptedMessage = shiftedEncrypt(encryptedMessage, secretKey.length % 26);
+    encryptedMessage = hexEncrypt(encryptedMessage, secretKey);
     return encryptedMessage;
 }
 
@@ -21,8 +23,9 @@ function encrypt(plaintext, secretKey) {
  * @returns {string} - The decrypted text.
  */
 function decrypt(encryptedText, secretKey) {
-    let decryptedMessage = shiftedDecrypt(encryptedText, secretKey.length % 26);
-    decryptedMessage = charDecrypt(decryptedMessage, secretKey)
+    let decryptedMessage = hexDecrypt(encryptedText, secretKey);
+    decryptedMessage = shiftedDecrypt(decryptedMessage, secretKey.length % 26);
+    decryptedMessage = charDecrypt(decryptedMessage, secretKey);
     return decryptedMessage;
 }
 
