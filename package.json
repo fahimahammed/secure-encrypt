@@ -3,6 +3,7 @@
   "version": "1.0.7",
   "description": "A package that simplifies data encryption and decryption, supporting various algorithms and providing a straightforward API for developers.",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "Fahim Ahammed Firoz",
   "scripts": {
     "start:dev": "ts-node-dev --respawn --transpile-only src/test.ts",
@@ -14,10 +15,19 @@
     "npm",
     "secure-encryption"
   ],
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/fahimahammed/secure-encrypt.git"
   },
+  "gitignore": [
+    "/dist/",
+    "/node_modules/",
+    ".DS_Store",
+    "test.ts"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.10.0",
