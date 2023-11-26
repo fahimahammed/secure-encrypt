@@ -12,16 +12,8 @@ npm install secure-encrypt
 ## Usage
 #### Importing the Module
 
-**JavaScript (ES6):**
-
 ```javascript
-import secureEncrypt from 'secure-encrypt';
-```
-
-**TypeScript:**
-
-```typescript
-import secureEncrypt from 'secure-encrypt';
+import { encrypt, decrypt } from 'secure-encrypt';
 ```
 
 ### Encrypting a Message
@@ -30,7 +22,7 @@ To encrypt a plaintext message, use the `encrypt` function:
 const plaintext = "Hello, World!";
 const secretKey = "mySecretKey";
 
-const encryptedText = secureEncrypt.encrypt(plaintext, secretKey);
+const encryptedText = encrypt(plaintext, secretKey);
 console.log("Encrypted Text:", encryptedText);
 ```
 
@@ -40,7 +32,7 @@ To decrypt an encrypted message, use the `decrypt` function:
 const encryptedText = "encryptedTextHere";
 const secretKey = "mySecretKey";
 
-const decryptedText = secureEncrypt.decrypt(encryptedText, secretKey);
+const decryptedText = decrypt(encryptedText, secretKey);
 console.log("Decrypted Text:", decryptedText);
 
 ```
