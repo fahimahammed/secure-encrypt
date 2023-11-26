@@ -8,7 +8,7 @@ import { shiftedEncrypt, shiftedDecrypt } from "./lib/shifted-encrypt";
  * @param secretKey - The secret key for encryption.
  * @returns The encrypted text (base64-encoded).
  */
-const encrypt = (plaintext: string, secretKey: string): string => {
+export const encrypt = (plaintext: string, secretKey: string): string => {
     let encryptedMessage: string = charEncrypt(plaintext, secretKey);
     encryptedMessage = shiftedEncrypt(encryptedMessage, secretKey.length % 26);
     encryptedMessage = hexEncrypt(encryptedMessage, secretKey);
@@ -21,15 +21,9 @@ const encrypt = (plaintext: string, secretKey: string): string => {
  * @param secretKey - The secret key for decryption.
  * @returns The decrypted text.
  */
-const decrypt = (encryptedText: string, secretKey: string): string => {
+export const decrypt = (encryptedText: string, secretKey: string): string => {
     let decryptedMessage: string = hexDecrypt(encryptedText, secretKey);
     decryptedMessage = shiftedDecrypt(decryptedMessage, secretKey.length % 26);
     decryptedMessage = charDecrypt(decryptedMessage, secretKey);
     return decryptedMessage;
-};
-
-// Export the encryption and decryption functions
-export default {
-    encrypt,
-    decrypt
 };
