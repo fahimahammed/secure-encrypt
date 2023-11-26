@@ -1,62 +1,48 @@
 # secure-encrypt
 
-A simple npm package providing encryption and decryption functions using character and shifted encryption techniques.
+`secure-encrypt` is an npm package designed for use with ES6 (JavaScript) and TypeScript, providing a versatile encryption and decryption functionality. It supports three different encryption techniques: character substitution, hexadecimal encoding, and Caesar shift. By combining these methods, `secure-encrypt` offers a robust and customizable encryption solution.
 
 ## Installation
+To install secure-encrypt in your ES6 (JavaScript) or TypeScript project, use the following npm command:
 
 ```bash
 npm install secure-encrypt
 ```
 
 ## Usage
+#### Importing the Module
 
-**CommonJS (Node.js) Syntax**
-
-```javascript
-const secureEncrypt = require('secure-encrypt');
-
-// Your secret key (keep this secret!)
-const secretKey = 'mySecretKey';
-
-// Text to encrypt
-const plaintext = 'Hello, secure-encrypt!';
-
-// Encrypt the text
-const encryptedText = secureEncrypt.encrypt(plaintext, secretKey);
-console.log('Encrypted:', encryptedText);
-
-// Decrypt the text
-try {
-  const decryptedText = secureEncrypt.decrypt(encryptedText, secretKey);
-  console.log('Decrypted:', decryptedText);
-} catch (error) {
-  console.error('Decryption failed:', error.message);
-}
-
-```
-
-**ES6 (ECMAScript 2015 and later) Syntax**
+**JavaScript (ES6):**
 
 ```javascript
 import secureEncrypt from 'secure-encrypt';
+```
 
-// Your secret key (keep this secret!)
-const secretKey = 'mySecretKey';
+**TypeScript:**
 
-// Text to encrypt
-const plaintext = 'Hello, secure-encrypt!';
+```typescript
+import secureEncrypt from 'secure-encrypt';
+```
 
-// Encrypt the text
+### Encrypting a Message
+To encrypt a plaintext message, use the `encrypt` function:
+```javascript
+const plaintext = "Hello, World!";
+const secretKey = "mySecretKey";
+
 const encryptedText = secureEncrypt.encrypt(plaintext, secretKey);
-console.log('Encrypted:', encryptedText);
+console.log("Encrypted Text:", encryptedText);
+```
 
-// Decrypt the text
-try {
-  const decryptedText = secureEncrypt.decrypt(encryptedText, secretKey);
-  console.log('Decrypted:', decryptedText);
-} catch (error) {
-  console.error('Decryption failed:', error.message);
-}
+### Decrypting a Message
+To decrypt an encrypted message, use the `decrypt` function:
+```javascript
+const encryptedText = "encryptedTextHere";
+const secretKey = "mySecretKey";
+
+const decryptedText = secureEncrypt.decrypt(encryptedText, secretKey);
+console.log("Decrypted Text:", decryptedText);
+
 ```
 
 ## Documentation
@@ -74,23 +60,18 @@ Decrypts the provided encrypted text using the specified secret key.
 - `secretKey` (string): The secret key for decryption.
 - Returns: The decrypted text.
 
-## Running the Code
-1. Save the code in a file, e.g., `app.js` for CommonJS syntax or `app.mjs` for ES6 syntax.
-2. Open a terminal and navigate to the directory containing the file.
-3. Run the code using the following command:
-    - For CommonJS syntax:
-        ```bash
-        node app.js
-        ```
 
-    - For ES6 syntax (requires Node.js with ES6 module support):
-        ```bash
-        node --experimental-modules app.mjs
-        ```
-
-For CommonJS syntax:
 
 ## Security Considerations
 - **Secret Key:** Keep your secret key confidential. Avoid hardcoding it in your code and consider using environment variables for increased security.
 - **Key Management:** Implement secure key management practices to protect against unauthorized access.
 - **Algorithm Updates:** Stay informed about cryptographic best practices and algorithm updates to ensure the security of your encrypted data.
+
+## Support and Contribution
+For bug reports, feature requests, or general inquiries, please create an issue on the [GitHub repository](https://github.com/fahimahammed/secure-encrypt).
+
+Contributions are welcome! Fork the repository, make your changes, and submit a pull request.
+
+
+## Acknowledgments
+The secure-encrypt package is inspired by the need for a versatile encryption solution with a combination of different techniques.
