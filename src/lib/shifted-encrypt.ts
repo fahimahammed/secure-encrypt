@@ -1,9 +1,3 @@
-/**
- * Encrypts a message using a shift value.
- * @param message - The message to be encrypted.
- * @param shift - The shift value for encryption.
- * @returns The encrypted message.
- */
 const shiftedEncrypt = (message: string, shift: number): string => {
     let encryptedMessage = '';
 
@@ -21,12 +15,6 @@ const shiftedEncrypt = (message: string, shift: number): string => {
     return encryptedMessage;
 };
 
-/**
- * Decrypts an encrypted message using a shift value.
- * @param encryptedMessage - The encrypted message.
- * @param shift - The shift value for decryption.
- * @returns The decrypted message.
- */
 const shiftedDecrypt = (encryptedMessage: string, shift: number): string => {
     return shiftedEncrypt(encryptedMessage, 26 - shift);
 };

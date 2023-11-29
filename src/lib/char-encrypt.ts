@@ -1,6 +1,5 @@
 import { keyDivider } from "../constants";
 
-
 /**
  * Encrypts a message using a secret key.
  * @param message - The message to be encrypted.
