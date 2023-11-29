@@ -1,6 +1,6 @@
 {
   "name": "secure-encrypt",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "A package that simplifies data encryption and decryption, supporting various algorithms and providing a straightforward API for developers.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
