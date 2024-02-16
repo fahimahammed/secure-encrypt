@@ -8,6 +8,10 @@ To install secure-encrypt in your ES6 (JavaScript) or TypeScript project, use th
 ```bash
 npm install secure-encrypt
 ```
+or, 
+```bash
+yarn add secure-encrypt
+```
 
 ## Usage
 #### Importing the Module
