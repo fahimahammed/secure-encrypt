@@ -184,4 +184,4 @@ Contributions are welcome! Fork the repository, make your changes, and submit a 
 
 
 ## Acknowledgments
-The secure-encrypt package is inspired by the need for a versatile encryption solution with a combination of different techniques.
+The secure-encrypt package is inspired by the need for a versatile encryption solution with a combination of different techniques
